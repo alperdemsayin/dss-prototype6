@@ -908,7 +908,9 @@ def render_one_solution(result: Dict, active_rows: List[Dict], depot: Dict, rank
 
 def render_sidebar() -> None:
     st.sidebar.markdown("## ⚓ Maritime DSS")
-    st.sidebar.markdown('<div class="nav-note">Simple navigation for setup, optimization, and plant monitoring.</div>', unsafe_allow_html=True)
+    st.sidebar.markdown(
+        '<div class="nav-note" style="color: white !important;">Simple navigation for setup, optimization, and plant monitoring.</div>',
+        unsafe_allow_html=True   )
     current_index = MENU_ITEMS.index(st.session_state.nav_page)
     selected = st.sidebar.radio("Main menu", MENU_ITEMS, index=current_index)
     if selected != st.session_state.nav_page:
